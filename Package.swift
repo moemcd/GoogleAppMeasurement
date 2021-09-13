@@ -1,6 +1,5 @@
 // swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
-
 // Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 import PackageDescription
 
 let package = Package(
@@ -46,6 +44,7 @@ let package = Package(
     .target(
       name: "GoogleAppMeasurementTarget",
       dependencies: [
+	"AppMeasurementIdentitySupport",
         "GoogleAppMeasurement",
         .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
@@ -63,14 +62,14 @@ let package = Package(
     ),
     .binaryTarget(
       name: "GoogleAppMeasurement",
-      url: "https://dl.google.com/firebase/ios/swiftpm/8.7.0/GoogleAppMeasurement.zip",
-      checksum: "f4b2894b83888eae0dba7848d6920cf67edd6836919d14b68540c46f4949e6f1"
+      url: "https://moemcd.github.io/GoogleAppMeasurement.xcframework.zip",
+      checksum: "9d457ea4747e730bab6f87b6cb4bd0cb976779db132522469f3f3067ef9c0732"
     ),
 
     .target(
       name: "GoogleAppMeasurementWithoutAdIdSupportTarget",
       dependencies: [
-        "GoogleAppMeasurementWithoutAdIdSupport",
+        "GoogleAppMeasurement",
         .product(name: "GULAppDelegateSwizzler", package: "GoogleUtilities"),
         .product(name: "GULMethodSwizzler", package: "GoogleUtilities"),
         .product(name: "GULNSData", package: "GoogleUtilities"),
@@ -86,9 +85,9 @@ let package = Package(
       ]
     ),
     .binaryTarget(
-      name: "GoogleAppMeasurementWithoutAdIdSupport",
-      url: "https://dl.google.com/firebase/ios/swiftpm/8.7.0/GoogleAppMeasurementWithoutAdIdSupport.zip",
-      checksum: "4bc45577a0b1b90f8b8b23fe93cf95ab594178a2eca07acb68ac51888b94f120"
+      name: "AppMeasurementIdentitySupport",
+      url: "https://moemcd.github.io/GoogleAppMeasurementIdentitySupport.xcframework.zip",
+      checksum: "a25276982390080e6da5a900bf17c8731cf87575e7e6cb50613494057230c7d2"
     ),
   ],
   cLanguageStandard: .c99,
