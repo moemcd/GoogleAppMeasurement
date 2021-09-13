@@ -60,12 +60,6 @@ let package = Package(
         .linkedFramework("StoreKit"),
       ]
     ),
-    .binaryTarget(
-      name: "GoogleAppMeasurement",
-      url: "https://moemcd.github.io/GoogleAppMeasurement.xcframework.zip",
-      checksum: "9d457ea4747e730bab6f87b6cb4bd0cb976779db132522469f3f3067ef9c0732"
-    ),
-
     .target(
       name: "GoogleAppMeasurementWithoutAdIdSupportTarget",
       dependencies: [
@@ -83,6 +77,11 @@ let package = Package(
         .linkedLibrary("z"),
         .linkedFramework("StoreKit"),
       ]
+    ),
+    .binaryTarget(
+      name: "GoogleAppMeasurement",
+      url: "https://moemcd.github.io/GoogleAppMeasurement.xcframework.zip",
+      checksum: "9d457ea4747e730bab6f87b6cb4bd0cb976779db132522469f3f3067ef9c0732"
     ),
     .binaryTarget(
       name: "AppMeasurementIdentitySupport",
